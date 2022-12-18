@@ -7,7 +7,13 @@ const connection = require('./util/db');
 
 
 const app = express()
-connection()
+app.use(cors())
+
+app.get('/', async (req,res)=> {
+    console.log("home")
+})
+
+
 
 const port = process.env.PORT || 3001
 app.listen(port,()=>{
